@@ -1,0 +1,22 @@
+{
+  "name": "invoice-mysql",
+  "version": "1.0.0",
+  "description": "invoicer db api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql"
+  ],
+  "author": "Alex Ponce <ljndr.ponce@gmail.com> (http://example.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
