@@ -1,8 +1,8 @@
 const sql = require("./db.js")
 
 const Invoice = function(invoice) {
-    this.invoiceNumber
-    this.customerID
+    this.invoiceNumber = invoice.invoiceNumber
+    this.customerID = invoice.customerID
 }
 
 Invoice.create = (newInvoice, result) => {
