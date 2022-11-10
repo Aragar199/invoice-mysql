@@ -1,6 +1,6 @@
 const invoices = require("../controllers/invoice.controller.js")
 
-var router = require("express").Router()
+var invoiceRouter = require("express").Router()
 
 router.post("/", invoices.create)
 

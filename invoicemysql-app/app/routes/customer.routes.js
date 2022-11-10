@@ -1,6 +1,6 @@
 const customers = require("../controllers/customer.controller.js")
 
-var router = require("express").Router()
+var customerRouter = require("express").Router()
 
 router.post("/", customers.create)
 
