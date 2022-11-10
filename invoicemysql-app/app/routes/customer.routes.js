@@ -5,12 +5,7 @@ module.exports = app => {
 
     router.post("/", customers.create)
 
-    router.get("/:email", customers.findByEmail)
-    router.get("/:id", customers.findById)
-    
-    router.put("/:id", customers.update)
-
-    router.delete("/:id", customers.delete)
+    router.get("/", customers.findByEmail)
 
     app.use('/api/customers', router)
 }
