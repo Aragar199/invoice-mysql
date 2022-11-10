@@ -1,16 +1,14 @@
-module.exports = app => {
-    const customers = require("../controllers/customer.controller.js")
+const customers = require("../controllers/customer.controller.js")
 
-    var router = require("express").Router()
+var router = require("express").Router()
 
-    router.post("/", customers.create)
+router.post("/", customers.create)
 
-    router.get("/:email", customers.findByEmail)
-    router.get("/:id", customers.findById)
-    
-    router.put("/:id", customers.update)
+router.get("/:email", customers.findByEmail)
+router.get("/:id", customers.findById)
 
-    router.delete("/:id", customers.delete)
+router.put("/:id", customers.update)
 
-    app.use('/api/customers', router)
-}
+router.delete("/:id", customers.delete)
+
+module.exports = customerRouter

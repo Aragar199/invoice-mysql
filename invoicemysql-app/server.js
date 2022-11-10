@@ -1,5 +1,8 @@
 require("dotenv").config()
 
+
+const customerRoute = require("./app/routes/customer.routes.js")
+const invoiceRoute = require("./app/routes/invoice.routes.js")
 const express = require("express")
 const cors = require("cors")
 
@@ -19,8 +22,8 @@ app.get("/", (req, res) => {
     res.json({ message: "invoicer db OK"})
 })
 
-require("./app/routes/customer.routes.js")(app)
-require("./app/routes/invoice.routes.js")(app)
+app.use("/api/customers", customerRoute)
+app.use("/api/invoices", invoiceRoute)
 
 const PORT = process.env.PORT || 6868
 app.listen(PORT, () => {

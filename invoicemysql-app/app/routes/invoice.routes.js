@@ -1,15 +1,13 @@
-module.exports = app => {
-    const invoices = require("../controllers/invoice.controller.js")
+const invoices = require("../controllers/invoice.controller.js")
 
-    var router = require("express").Router()
+var router = require("express").Router()
 
-    router.post("/", invoices.create)
+router.post("/", invoices.create)
 
-    router.get("/:id", invoices.findByNumber)
-    
-    router.put("/:id", invoices.update)
+router.get("/:id", invoices.findByNumber)
 
-    router.delete("/:id", invoices.delete)
+router.put("/:id", invoices.update)
 
-    app.use('/api/invoices', router)
-}
+router.delete("/:id", invoices.delete)
+
+module.exports = invoiceRouter
