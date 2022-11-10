@@ -70,7 +70,7 @@ Customer.updateById = (id, customer, result) => {
                 return
             }
 
-            console.log("updated tutorial: ", { id: id, ...customer })
+            console.log("updated customer: ", { id: id, ...customer })
             result(null, { id: id, ...customer })
         }
     )
