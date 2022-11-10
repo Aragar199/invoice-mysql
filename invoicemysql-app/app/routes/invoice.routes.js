@@ -2,12 +2,12 @@ const invoices = require("../controllers/invoice.controller.js")
 
 var invoiceRouter = require("express").Router()
 
-router.post("/", invoices.create)
+invoiceRouter.post("/", invoices.create)
 
-router.get("/:id", invoices.findByNumber)
+invoiceRouter.get("/:id", invoices.findByNumber)
 
-router.put("/:id", invoices.update)
+invoiceRouter.put("/:id", invoices.update)
 
-router.delete("/:id", invoices.delete)
+invoiceRouter.delete("/:id", invoices.delete)
 
 module.exports = invoiceRouter

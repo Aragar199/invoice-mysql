@@ -2,13 +2,13 @@ const customers = require("../controllers/customer.controller.js")
 
 var customerRouter = require("express").Router()
 
-router.post("/", customers.create)
+customerRouter.post("/", customers.create)
 
-router.get("/:email", customers.findByEmail)
-router.get("/:id", customers.findById)
+customerRouter.get("/:email", customers.findByEmail)
+customerRouter.get("/:id", customers.findById)
 
-router.put("/:id", customers.update)
+customerRouter.put("/:id", customers.update)
 
-router.delete("/:id", customers.delete)
+customerRouter.delete("/:id", customers.delete)
 
 module.exports = customerRouter
