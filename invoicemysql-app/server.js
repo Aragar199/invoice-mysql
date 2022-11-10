@@ -20,6 +20,7 @@ app.get("/", (req, res) => {
 })
 
 require("./app/routes/customer.routes.js")(app)
+require("./app/routes/invoice.routes.js")(app)
 
 const PORT = process.env.PORT || 6868
 app.listen(PORT, () => {
