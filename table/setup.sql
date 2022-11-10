@@ -5,12 +5,11 @@ create table `customers` (
 );
 
 create table `line_items` (
-	invoiceNumber int not null primary key,
 	itemName varchar(255) not null,
     itemDescription varchar(255),
     itemPrice decimal(13,2) not null,
-    customerID int,
-    foreign key (customerID) references customers(customerID)
+    invoiceID int,
+    foreign key (invoiceID) references invoices(invoiceID)
 );
 
 
