@@ -24,7 +24,7 @@ exports.create = (req, res) => {
 }
 
 exports.findByNumber = (req, res) => {
-    Customer.findByNumber(req.params.id, (err, data) => {
+    Invoice.findByNumber(req.params.id, (err, data) => {
         if (err) {
             if(err.kind === "not_found") {
                 res.status(404).send({
@@ -50,7 +50,7 @@ exports.update = (req, res) => {
 
     Invoice.updateById(
         req.params.id,
-        new Customer(req.body),
+        new Invoice(req.body),
         (err, data) => {
             if (err) {
                 if (err.kind === "not_found") {
