@@ -24,15 +24,15 @@ exports.create = (req, res) => {
 }
 
 exports.findByEmail = (req, res) => {
-    Customer.findByEmail(req.query.email, (err, data) => {
+    Customer.findByEmail(req.params.email, (err, data) => {
         if (err) {
             if(err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Customer with email ${req.query.email} not found.`
+                    message: `Customer with email ${req.params.email} not found.`
                 })
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Customer with email " + req.query.email
+                    message: "Error retrieving Customer with email " + req.params.email
                 })
             }
         } else res.send(data)
@@ -40,15 +40,15 @@ exports.findByEmail = (req, res) => {
 }
 
 exports.findById = (req, res) => {
-    Customer.findById(req.query.id, (err, data) => {
+    Customer.findById(req.params.id, (err, data) => {
         if (err) {
             if(err.kind === "not_found") {
                 res.status(404).send({
-                    message: `Customer with id ${req.query.id} not found.`
+                    message: `Customer with id ${req.params.id} not found.`
                 })
             } else {
                 res.status(500).send({
-                    message: "Error retrieving Customer with id " + req.query.email
+                    message: "Error retrieving Customer with id " + req.params.email
                 })
             }
         }
